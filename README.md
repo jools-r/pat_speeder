@@ -22,7 +22,7 @@ This plugin (v 0.7) seems to get **better results** than ask_header (v 0.3.6) **
 
 After installation, go to your website preferences:
 
-**Enable pat_speeder?** Allow you to stop this plugin rendering thougout all your pages where it is used (only if the "enable" attibute is set on "1");
+**Enable pat_speeder?** Allow you to stop this plugin rendering throughout all your pages where it is used (only if the "enable" attribute is set to "yes");
 
 **Enable pat_speeder only when live?** Only compress source code when the site production status is 'live' (only if the "enable" attribute is set to "yes"). In 'debug' and 'testing' production statuses, the source is not compressed;
 
@@ -30,8 +30,4 @@ After installation, go to your website preferences:
 
 **List of tags to protect from pat_speeder:** a comma separated list of tags to protect against the plugin. Default: `script, svg, pre, code`. Note: `textarea` is included into the plugin;
 
-**Enable extreme compression?** This is a 'Compact mode' that removes all unnecessary spaces (precisely: 2 and more) between all tags to return a smaller document in size. Keep in mind you have to write correctly your page and form markups without excessive spaces around tags otherwise you can get unexpective results such as text content sticky from each others (typical case: a link into a text). So this is why this mode is facultative and reserved for advanced users.
-
-
-
-
+**Enable extreme compression?** This is a 'Compact mode' that removes all unnecessary spaces (precisely: 2 and more) between all tags to return a smaller document in size. Keep in mind you have to write correctly your page and form markups without excessive spaces around tags otherwise you can get unexpected results such as text content sticky from each others (typical case: a link into a text). So this is why this mode is facultative and reserved for advanced users.
