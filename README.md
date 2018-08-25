@@ -24,6 +24,8 @@ After installation, go to your website preferences:
 
 **Enable pat_speeder?** Allow you to stop this plugin rendering thougout all your pages where it is used (only if the "enable" attibute is set on "1");
 
+**Enable pat_speeder only when live?** Only compress source code when the site production status is 'live' (only if the "enable" attribute is set to "yes"). In 'debug' and 'testing' production statuses, the source is not compressed;
+
 **Enable GZIP compression with pat_speeder?** Choose to activate the internal GZIP compression if needed (you may set your .htaccess file instead) only if the gzip attribute isn't set into this plugin tag;
 
 **List of tags to protect from pat_speeder:** a comma separated list of tags to protect against the plugin. Default: `script, svg, pre, code`. Note: `textarea` is included into the plugin;

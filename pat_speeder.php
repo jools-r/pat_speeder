@@ -24,7 +24,7 @@ if (class_exists('\Textpattern\Tag_Registry')) {
 
 /**
  * This plugin lifecycle
- * 
+ *
  */
 if (txpinterface == 'admin')
 {
@@ -49,7 +49,13 @@ function pat_speeder($atts)
 		'compact' => get_pref('pat_speeder_compact'),
 	),$atts));
 
-	if (get_pref('pat_speeder_enable') or ($enable and get_pref('pat_speeder_enable'))) {
+	if (
+		(get_pref('pat_speeder_enable_live_only') and get_pref('production_status') === 'live')
+			or
+		(get_pref('pat_speeder_enable_live_only') == '0' and
+			(get_pref('pat_speeder_enable') or ($enable and get_pref('pat_speeder_enable')))
+		)
+	) {
 		ob_start(function($buffer) use ($gzip, $code, $compact) {
 			return _pat_speeder_go($buffer, $gzip, $code, $compact);
 		});
@@ -104,7 +110,7 @@ function _pat_speeder_go($buffer, $gzip, $code, $compact)
 /**
  * Plugin prefs.
  *
- * @param  
+ * @param
  * @return Insert this plugin prefs into 'txp_prefs' table.
  */
 function _pat_speeder_prefs()
@@ -113,14 +119,17 @@ function _pat_speeder_prefs()
 	if (!safe_field ('name', 'txp_prefs', "name='pat_speeder_enable'"))
 		safe_insert('txp_prefs', "name='pat_speeder_enable', val='0', type=1, event='admin', html='yesnoradio', position=24");
 
+	if (!safe_field ('name', 'txp_prefs', "name='pat_speeder_enable_live_only'"))
+		safe_insert('txp_prefs', "name='pat_speeder_enable_live_only', val='1', type=1, event='admin', html='yesnoradio', position=25");
+
 	if (!safe_field ('name', 'txp_prefs', "name='pat_speeder_gzip'"))
-		safe_insert('txp_prefs', "name='pat_speeder_gzip', val='0', type=1, event='admin', html='yesnoradio', position=25");
+		safe_insert('txp_prefs', "name='pat_speeder_gzip', val='0', type=1, event='admin', html='yesnoradio', position=26");
 
 	if (!safe_field ('name', 'txp_prefs', "name='pat_speeder_tags'"))
-		safe_insert('txp_prefs', "name='pat_speeder_tags', val='script,svg,pre,code', type=1, event='admin', html='text_input', position=26");
+		safe_insert('txp_prefs', "name='pat_speeder_tags', val='script,svg,pre,code', type=1, event='admin', html='text_input', position=27");
 
 	if (!safe_field ('name', 'txp_prefs', "name='pat_speeder_compact'"))
-		safe_insert('txp_prefs', "name='pat_speeder_compact', val='0', type=1, event='admin', html='yesnoradio', position=27");
+		safe_insert('txp_prefs', "name='pat_speeder_compact', val='0', type=1, event='admin', html='yesnoradio', position=28");
 
 	safe_repair('txp_prefs');
 	safe_repair('txp_plugin');
@@ -148,3 +157,4 @@ function _pat_speeder_cleanup()
 
 }
 
+?>
