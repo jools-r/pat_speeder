@@ -1,0 +1,18 @@
+{
+    "name"          : "pat_speeder",
+    "description"   : "Speed up your TXP websites!",
+    "version"       : "1.1.1",
+    "type"          : 1,
+    "author"        : "Patrick LEFEVRE",
+    "author_uri"    : "http://pat-speeder.cara-tm.com",
+    "contributors"  : "Patrick LEFEVRE, Ruud van Melick, Julian Reisenberger",
+    "compatibility" : "4.7",
+    "order"         : 5,
+    "flags"         : 2,
+    "help"          : {"file" : [
+                          "./help.textile"
+                      ]},
+    "code"          : {"file" : [
+                          "./pat_speeder.php"
+                      ]}
+}
