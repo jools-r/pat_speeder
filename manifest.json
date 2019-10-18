@@ -1,7 +1,7 @@
 {
     "name"          : "pat_speeder",
     "description"   : "Speed up your TXP websites!",
-    "version"       : "1.1.1",
+    "version"       : "1.1.2",
     "type"          : 1,
     "author"        : "Patrick LEFEVRE",
     "author_uri"    : "http://pat-speeder.cara-tm.com",

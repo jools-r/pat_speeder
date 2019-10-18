@@ -67,6 +67,7 @@ h2. Changelog
 * v1.0 on 14th July 2018. better support for IE conditional comments into the @head@ part of the document; support for the Google comments (i.e. @<!--googleoff: all-->@); better support for accentuated languages.
 * v1.1 on 23th July 2018. Final version.
 * v1.1.1 on 25th August 2018. Add option to only compress when the site production status is ‘live’.
+* v1.1.2 on 18th November 2019. Correct tag registration.
 
 See also the "forum thread":https://forum.textpattern.com/viewtopic.php?id=31345 for requests or help.
 

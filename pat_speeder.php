@@ -8,7 +8,7 @@
  * @type:         Admin + Public
  * @prefs:        no prefs
  * @order:        5
- * @version:      1.1
+ * @version:      1.1.2
  * @license:      GPLv2
  */
 
